@@ -90,3 +90,103 @@ function sumMul(n,m){
 	}return sum
 }
 
+//11. Opposite number
+
+function opposite(number) {
+	if( number > 0 ){
+	   return -number
+	}else if(number < 0){
+	   return number * -1
+	}else {
+	   return 0
+	}
+}
+
+//12. Is n divisible by x and y?
+
+function isDivisible(n, x, y) {
+	return  (n % x == 0 & n % y == 0) ? true : false;
+}
+
+//13. Powers of 2
+
+function powersOfTwo(n){
+	let m=[]
+	if (n ==0){
+	   return [1]
+	} else if ( n > 0){
+	   for( let i=0; i<=n; i++){
+		m[i]= Math.pow(2, i)
+	   }return m
+	}
+}
+
+//14. Is the date today
+
+function isToday(date) {
+	const today = new Date();
+	if (date.getFullYear() == today.getFullYear() && 
+		date.getMonth() == today.getMonth() &&
+		date.getDate() == today.getDate()) {
+		return true
+	}else {
+		return false
+	}
+}
+
+//15. Sentence Smash
+
+function smash (words) {
+   return words.join(" ")
+}
+
+//16. Odd or Even?
+
+function oddOrEven(array) {
+	let sum = 0 ;
+	for( let i=0 ; i < array.length; i++) {
+	   sum += array[i]
+	} return ( sum % 2 == 0) ? "even" : "odd"
+}
+
+//17. Is it a palindrome?
+
+function isPalindrome(x) {
+	let str = x.split('').reverse('').join('');
+	if ( x.toLowerCase() === str.toLowerCase()) {
+	   return true
+	} else {
+	   return false
+	}
+}
+
+//18. Sum of all arguments
+
+function sum() {
+	let sumNumber =0;
+	for( let i=0 ; i < arguments.length; i++) {
+	   sumNumber += arguments[i];
+	}return sumNumber
+}
+
+//19. Vowel Count
+
+function getCount(str) {
+	let vowelsCount = 0;
+	let strNew = str.split('');
+	for(let i=0 ; i < strNew.length;i++){
+	   if (strNew[i] =='a' || strNew[i] == 'e' || strNew[i] == 'i' || strNew[i] == 'o'
+			||strNew[i] == 'u' ){
+		vowelsCount += 1 ;
+	   }
+	}
+	return vowelsCount;
+}
+
+//20. Find the smallest integer in the array
+
+class SmallestIntegerFinder {
+	findSmallestInt(args) {
+	return Math.min.apply(Math, args)
+	}
+}
