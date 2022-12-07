@@ -190,3 +190,97 @@ class SmallestIntegerFinder {
 	return Math.min.apply(Math, args)
 	}
 }
+
+//21. Beginner Series #1 School Paperwork
+
+function paperwork(n, m) {
+	let x = n*m;
+	if ( n < 0 || m < 0){
+		return 0 
+	} else {
+		return  x
+	}
+}
+
+//22. Is he gonna survive?
+
+function hero(bullets, dragons){
+   return (bullets / dragons >= 2) ? true : false
+}
+
+//23. Sum Arrays
+
+function sum (numbers) {
+	let sumNumber =0;
+for( let i=0 ; i < numbers.length; i++) {
+   sumNumber += numbers[i];
+   }return sumNumber
+}
+
+//24. Simple multiplication
+
+function simpleMultiplication(number) {
+	if (number % 2 == 0){
+	  return number * 8
+	}else{
+	  return number * 9
+	}
+}
+
+//25. You Can't Code Under Pressure #1
+
+function doubleInteger(i) {
+	return i*2;
+}
+
+//26. Counting sheep...
+
+function countSheeps(arrayOfSheep) {
+	let count =0;
+	for (let i = 0; i <= arrayOfSheep.length; i++ ){
+	   if (arrayOfSheep[i] == true) {
+		   count++
+	} 
+	}return count
+}
+
+//27. Convert number to reversed array of digits
+
+function digitize(n) {
+	let array = (""+n).split("").reverse().map(Number);
+	return array
+}
+
+//28. Sum of positive
+
+function positiveSum(arr) {
+	let sum = 0;
+	for (let i = 0; i < arr.length; i++){
+	   if(arr[i] > 0){
+		   sum += arr[i]
+	}
+	}return sum
+}
+
+//29. Will you make it?
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+	return (fuelLeft *  mpg >= distanceToPump) ? true : false ;
+}
+
+//30. String ends with?
+
+function solution(str, ending){
+	let n = 0;
+	let x = true;
+	let newStr = str.split('').reverse('');
+	let newEnd = ending.split('').reverse('');
+   for(let  i=0; i<newEnd.length; i++){
+	   if(newEnd[i] == newStr[i]){
+			n++;
+	   }if (n == newEnd.length)
+					x = Boolean(true);
+				else
+					x = Boolean(false);
+	} return x
+}
