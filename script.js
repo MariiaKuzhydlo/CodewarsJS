@@ -284,3 +284,121 @@ function solution(str, ending){
 					x = Boolean(false);
 	} return x
 }
+
+//31. Are You Playing Banjo?
+
+function areYouPlayingBanjo(name) {
+	let nameArray = name.toLowerCase().split('');
+	if (nameArray[0] == 'r'){
+	return name +' '+ 'plays banjo'
+	} else{
+	return name + ' '+ 'does not play banjo';
+	} 
+}
+
+//32. Transportation on vacation
+
+function rentalCarCost(d) {
+   let sum = 0
+   if ( d < 3 ){
+     sum = d * 40
+   } else if( d >=3 && d< 7){
+      sum = d*40 - 20 
+   } else {
+      sum = d*40 - 50
+   }  return sum 
+}
+
+//33. The Feast of Many Beasts
+
+function feast(beast, dish) {
+	if (beast[0] == dish[0] && beast.substr(-1) == dish.substr(-1)){
+	   return true
+	} else{
+	   return false
+	}
+}
+
+//34. Sum of odd numbers
+
+function rowSumOddNumbers(n) {
+	let sum = 0;
+   for (let i = 0; i < n; i++){
+      if (n==1){
+      sum = 1 
+   } else {
+      sum += n*(2*i+1)
+   }
+   }
+	return sum
+}
+
+//35. Sorted? yes? no? how?
+
+function isSortedAndHow(array) {
+	let a=1;
+	let d=1;
+	let x = 'no'
+	for (let i=0; i < array.length; i++){
+	   if (array[i] <= array[i+1]){
+		a++
+	   } else if (array[i] > array[i+1]){
+		d++
+	   } if (a == array.length){
+		x = 'yes, ascending'
+	   } else if ( d == array.length){
+		x = 'yes, descending'
+	   }
+	}return x
+}
+
+//36. Case Swapping
+
+function swap(str){
+	let  newStr = str.split('');
+	let res = '';
+   for (let i=0; i< newStr.length;i++){
+	if(newStr[i] === newStr[i].toLowerCase()){
+		res += newStr[i].toUpperCase()
+	} else {
+		res += newStr[i].toLowerCase()
+	}
+   }  return res
+}
+
+//37. Spacify
+
+function spacify(str) {
+	let res='';
+	for(let i = 0; i < str.length;i++){
+	   res += str[i]+ ' '
+	}return res.substring(0, res.length - 1);
+}
+
+//38. Reverse words
+
+
+function reverseWords(str) {
+	let arr = str.split(' ')
+	let result = arr.map(item => item.split('').reverse('').join(''));
+return result.join(' ')
+}
+
+//39. Nice Array
+
+function isNice(arr){
+	let result=0;
+	arr.forEach(function(item, index, array) {
+	if (arr.includes(item + 1) || arr.includes(item - 1)) {
+		result +=1;
+	}
+});
+	return ((result == arr.length) && ( arr.length !== 0) ?  true : false)
+}
+
+//40. Convert an array of strings to array of numbers
+
+function toNumberArray(stringarray){
+	let numberArray = stringarray.map( item => Number(item));
+	return numberArray
+}
