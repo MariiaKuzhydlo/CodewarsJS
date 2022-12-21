@@ -402,3 +402,98 @@ function toNumberArray(stringarray){
 	let numberArray = stringarray.map( item => Number(item));
 	return numberArray
 }
+
+//41. Largest pair sum in array
+
+function largestPairSum (numbers) {
+	let getSumNumber = 0;
+	let getIndexMaxNumber;
+		for ( let i = 0; i<=1; i++){
+	      let  maxElement = Math.max(...numbers);
+		getSumNumber +=maxElement
+		getIndexMaxNumber = numbers.indexOf(maxElement);
+		numbers.splice(getIndexMaxNumber,1);
+	};
+	return getSumNumber 
+}
+
+//42. Even numbers in an array
+
+function evenNumbers(array, number) {
+	let result =array.filter(item => item % 2 == 0).reverse(); 
+	result.length = number;
+	return result.reverse()
+}
+
+//43. Working with arrays I (and why your code fails in some katas)
+
+function withoutLast(arr) {
+	let newArr = arr.filter(item => item !== '');
+	newArr.pop()
+   return newArr
+}
+
+//44. Number of People in the Bus
+
+var number = function(busStops){
+	let getArr = busStops.join(',').split(',').map( item=> Number(item));
+	let getInto = 0;
+	let getOut = 0;
+	for(let i = 0; i<getArr.length; i++){
+	   if ( i % 2 !== 0){
+		getOut += getArr[i];
+		} else {
+		getInto += getArr[i]; 
+	}
+	}
+		return getInto - getOut
+}
+
+//45. Maximum Triplet Sum (Array Series #7)
+
+function maxTriSum(numbers){
+	let uniqueArray = numbers.filter((item, pos) => numbers.indexOf(item)==pos);
+	let result=0
+	for(let i=0;i<=2;i++){
+		let maxNumber = Math.max(...uniqueArray);
+		result +=maxNumber;
+		uniqueArray.splice(uniqueArray.indexOf(maxNumber),1);
+	}
+	return result
+}
+
+//46. Array comparator
+
+const matchArrays = (v, r) => v.filter(e => r.includes(e)).length;
+
+//47. Product Of Maximums Of Array (Array Series #2)
+
+function maxProduct(numbers, size){
+	let result= numbers.sort((a,b)=> b-a).slice(0, size).reduce((previous, current) => previous * current);
+	return result
+}
+
+//48. Multiply the strings in the array
+
+function arrMultiply(arr){
+	let product=arr.map(item => Number(item)).reduce((a,b)=> a*b);
+	return String(product)
+}
+
+//49. Find all occurrences of an element in an array
+
+function findAll(array, n) {
+	let getArrayOfIndexs = [];
+	let indexOfN = array.indexOf(n);
+	while (indexOfN !== -1){
+		getArrayOfIndexs.push(indexOfN);
+		indexOfN = array.indexOf(n, indexOfN  + 1);
+	} return getArrayOfIndexs
+}
+
+//50. Sum of array singles
+
+function repeats(arr){
+	let uniqueArray = arr.filter((el) => arr.indexOf(el)=== arr.lastIndexOf(el));
+	return uniqueArray.reduce((a,b)=> a+b)
+}
