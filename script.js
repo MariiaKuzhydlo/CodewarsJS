@@ -560,7 +560,7 @@ function min(arr, toReturn) {
 
 //58. Odd-heavy Array
 
-unction isOddHeavy(n){
+function isOddHeavy(n){
 	let oddArr = n.filter(element=> element % 2 != 0)
 	let evenArr = n.filter(element=> element % 2 == 0)
 	for( let item of oddArr){
