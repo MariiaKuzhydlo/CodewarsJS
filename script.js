@@ -497,3 +497,93 @@ function repeats(arr){
 	let uniqueArray = arr.filter((el) => arr.indexOf(el)=== arr.lastIndexOf(el));
 	return uniqueArray.reduce((a,b)=> a+b)
 }
+
+//51. Remove Empty Items of Array
+
+function clean(arr) {
+	return arr.filter(item => item !== ' ')
+}
+
+//52. Use map() to double the values in an array
+
+function double(array) {
+   return array.map(item=> item *2)
+}
+
+//53. Is every value in the array an array?
+
+function arrCheck(value){
+	return value.every(item => Array.isArray(item))
+}
+
+//54. Sort array by string length
+
+function sortByLength (array) {
+	return array.sort((a,b)=>a.length- b.length)
+}
+
+//55. Array Array Array
+
+function explode(x){
+	let result = [];
+		if(x.every((item )=> typeof(item) == 'number' )){
+	let  sumNumber = x.reduce((a,b)=> a+b);
+	while( result.length < sumNumber){
+	   result.push(x)
+	}
+	}  else if(x.every((item )=> typeof(item) == 'string' )){
+			result ='Void!'
+	} else {
+	let oneNumber = x.find((item)=> typeof(item) == 'number')
+	   while( result.length < oneNumber){
+			result.push(x)
+	}
+	}   return result
+	}
+
+//56. Array Appender
+
+function appendArrays (arr1, arr2) {
+let arr3 = arr1.concat(arr2);
+	return arr3
+}
+
+//57. Smallest value of an array
+
+function min(arr, toReturn) {
+	if( toReturn == 'value'){
+	   return  Math.min(...arr)
+	} else if(toReturn == 'index' ){
+	   return arr.indexOf(Math.min(...arr))
+	}
+}
+
+//58. Odd-heavy Array
+
+unction isOddHeavy(n){
+	let oddArr = n.filter(element=> element % 2 != 0)
+	let evenArr = n.filter(element=> element % 2 == 0)
+	for( let item of oddArr){
+		return evenArr.every(element=> +element < +item)
+	}
+	if ( !Number(n) || n ==NaN || String(n) || n == ''){
+	return false
+	}
+}
+
+//59.OOP: Object Oriented Piracy
+
+function Ship(draft,crew) {
+	this.draft = draft;
+	this.crew = crew;
+	this.isWorthIt = function () {
+		return (draft - 1.5*crew > 20) ? true : false;
+	}
+}
+
+//60. Training JS #5: Basic data types--Object
+
+function animal(obj){
+	return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`
+}
+
